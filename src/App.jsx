@@ -1,10 +1,13 @@
-import { Test } from "./styled";
+import Header from "./components/Header/Header.jsx";
+import { AppWrapper, Container } from "./styled";
 
 const App = () => {
   return (
-    <Test>
-      <div>Hello</div>
-    </Test>
+    <AppWrapper>
+      <Container>
+        <Header />
+      </Container>
+    </AppWrapper>
   );
 };
 
