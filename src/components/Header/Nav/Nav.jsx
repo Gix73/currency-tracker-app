@@ -1,4 +1,5 @@
-import { Button, Logo, NavContainer, NavWrapper } from "./styled";
+import ToggleButton from "../ToggleButton/ToggleButton.jsx";
+import { Logo, NavContainer, NavWrapper } from "./styled";
 
 const Nav = () => {
   return (
@@ -10,7 +11,7 @@ const Nav = () => {
         <div>Bank card</div>
         <div>Contato</div>
       </NavContainer>
-      <Button />
+      <ToggleButton />
     </NavWrapper>
   );
 };

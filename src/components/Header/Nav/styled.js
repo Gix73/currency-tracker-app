@@ -22,8 +22,3 @@ export const NavContainer = styled.nav`
   width: 100%;
   height: 44px;
 `;
-
-export const Button = styled.input.attrs({ type: "checkbox" })`
-  width: 50px;
-  height: 50px;
-`;
