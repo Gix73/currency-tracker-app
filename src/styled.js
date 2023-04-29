@@ -11,7 +11,9 @@ export const AppWrapper = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
   background-color: #030304;
+  flex-direction: column;
   max-width: 1456px;
   width: 100%;
   height: 100vh;

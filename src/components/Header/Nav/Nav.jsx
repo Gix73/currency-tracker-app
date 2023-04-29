@@ -1,5 +1,6 @@
+import { Logo } from "../../../globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
-import { Logo, NavContainer, NavWrapper } from "./styled";
+import { NavContainer, NavWrapper } from "./styled";
 
 const Nav = () => {
   return (

@@ -12,6 +12,7 @@ export const InfoWarapper = styled.div`
   );
   filter: drop-shadow(rgba(52, 182, 25, 0.8) 0px 0px 1px);
   padding-top: 40px;
+  padding-left: 63px;
 `;
 
 export const InfoContainer = styled.div`

@@ -24,5 +24,6 @@
         "react"
     ],
     "rules": {
+        "amd": false
     }
 }
