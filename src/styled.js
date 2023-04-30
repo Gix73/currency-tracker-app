@@ -4,9 +4,10 @@ export const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   /* background-color: #030304; */
   background-color: grey;
+  /* min-height: 2000px; */
 `;
 
 export const Container = styled.div`
@@ -16,5 +17,5 @@ export const Container = styled.div`
   flex-direction: column;
   max-width: 1456px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 `;
