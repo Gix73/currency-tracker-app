@@ -1,3 +1,4 @@
+import { memo, useEffect } from "react";
 import { Logo, StyledLink } from "../../globalStyled/staticComponents";
 import {
   AboutSpan,
@@ -14,6 +15,14 @@ import {
 } from "./styled";
 
 const Footer = () => {
+  useEffect(() => {
+    console.log("Footer Mount");
+    return () => {
+      console.log("Footer UnMount");
+    };
+  }),
+    [];
+
   return (
     <FooterWrapper>
       <FooterContainer>
@@ -58,4 +67,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

@@ -2,14 +2,16 @@ import axios from "axios";
 import InfoCard from "./InfoCard/InfoCard";
 import { CategorySpan, Container, HomeWrapper, Wrapper } from "./styled";
 import { exchangeValues } from "../../constants/exchangeValues";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const Home = ({ data }) => {
-  const [exchange, setExchange] = useState({});
-
+const Home = ({ data, showModal, exchangeHandler }) => {
   useEffect(() => {
-    setExchange((prevState) => data);
-  }, [data]);
+    console.log("Home Mount");
+    return () => {
+      console.log("Home UnMount");
+    };
+  }),
+    [];
 
   function createItems() {
     let components = [];
@@ -22,7 +24,9 @@ const Home = ({ data }) => {
           name={exchangeValues[key].name}
           sign={exchangeValues[key].sign}
           url={exchangeValues[key].img}
-          data={exchange.usd}
+          data={data.usd}
+          showModal={showModal}
+          exchangeHandler={exchangeHandler}
         />
       );
     }
@@ -37,8 +41,8 @@ const Home = ({ data }) => {
           <CategorySpan>Ações</CategorySpan>
         </Container>
         <Container>
-          <InfoCard />
-          <InfoCard />
+          <InfoCard showModal={showModal} exchangeHandler={exchangeHandler} />
+          <InfoCard showModal={showModal} exchangeHandler={exchangeHandler} />
         </Container>
         <Container>
           <CategorySpan>Cotações</CategorySpan>
