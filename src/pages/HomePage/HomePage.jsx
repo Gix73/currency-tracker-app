@@ -1,10 +1,10 @@
 import Home from "../../components/Home/Home";
 import { HomePageWrapper } from "./styled";
 
-const HomePage = () => {
+const HomePage = ({ data }) => {
   return (
     <HomePageWrapper>
-      <Home />
+      <Home data={data} />
     </HomePageWrapper>
   );
 };

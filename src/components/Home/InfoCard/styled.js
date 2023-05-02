@@ -15,7 +15,8 @@ export const InfoCardWrapper = styled.div`
 export const CardImg = styled.div`
   width: 80px;
   height: 80px;
-  background-image: url("${icon}");
+  background-image: ${(props) =>
+    props.url ? `url('${props.url}');` : `url("${icon}");`};
   background-repeat: no-repeat;
   padding-right: 110px;
 `;

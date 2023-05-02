@@ -6,13 +6,20 @@ import {
   InfoSpan,
 } from "./styled";
 
-const InfoCard = () => {
+const InfoCard = ({ firstVal, name, sign, url, data }) => {
+  function convert() {
+    return (1 / data[firstVal]).toFixed(6);
+  }
+
   return (
     <InfoCardWrapper>
-      <CardImg />
+      <CardImg url={url} />
       <InfoContainer>
-        <InfoSpan>Índice Bovespa</InfoSpan>
-        <CostSpan>0.15%</CostSpan>
+        <InfoSpan>{name}</InfoSpan>
+        <CostSpan>
+          {"$ "}
+          {data ? convert() : ""}
+        </CostSpan>
       </InfoContainer>
     </InfoCardWrapper>
   );

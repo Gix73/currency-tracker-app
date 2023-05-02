@@ -11,3 +11,7 @@ root.render(
     <App />
   </BrowserRouter>
 );
+
+if ("development" && module && module.hot) {
+  module.hot.accept();
+}

@@ -1,4 +1,4 @@
-import { Logo } from "../../../globalStyled/staticComponents.js";
+import { Logo, StyledLink } from "../../../globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
 import { NavContainer, NavWrapper } from "./styled";
 
@@ -7,10 +7,18 @@ const Nav = () => {
     <NavWrapper>
       <Logo />
       <NavContainer>
-        <div>Home</div>
-        <div>Timeline</div>
-        <div>Bank card</div>
-        <div>Contato</div>
+        <div>
+          <StyledLink to="/">Home</StyledLink>
+        </div>
+        <div>
+          <StyledLink to="/timeline">Timeline</StyledLink>
+        </div>
+        <div>
+          <StyledLink to="/bankcard">Bank card</StyledLink>
+        </div>
+        <div>
+          <StyledLink to="/">Contato</StyledLink>
+        </div>
       </NavContainer>
       <ToggleButton />
     </NavWrapper>

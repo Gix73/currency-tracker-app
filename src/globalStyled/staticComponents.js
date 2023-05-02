@@ -5,9 +5,9 @@ import styled from "styled-components";
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: white;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 41px;
   color: #898989;
 
   /* &[aria-current] {
