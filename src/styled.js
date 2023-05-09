@@ -6,14 +6,15 @@ export const AppWrapper = styled.div`
   width: 100%;
   /* height: 100vh; */
   /* background-color: #030304; */
-  background-color: grey;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
   /* min-height: 2000px; */
 `;
 
 export const Container = styled.div`
   display: flex;
   position: relative;
-  background-color: #030304;
+  /* background-color: #030304; */
   flex-direction: column;
   max-width: 1456px;
   width: 100%;

@@ -7,7 +7,7 @@ export const InfoCardWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 30px;
-  background: #202025;
+  background: ${(props) => props.theme.exchangeColor};
   border: 1px solid #474747;
   border-radius: 8px;
 `;

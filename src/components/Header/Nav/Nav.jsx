@@ -3,7 +3,7 @@ import { Logo, StyledLink } from "../../../globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
 import { NavContainer, NavWrapper } from "./styled";
 
-const Nav = () => {
+const Nav = ({ toggleTheme }) => {
   return (
     <NavWrapper>
       <Logo />
@@ -21,7 +21,7 @@ const Nav = () => {
           <StyledLink to="/">Contato</StyledLink>
         </div>
       </NavContainer>
-      <ToggleButton />
+      <ToggleButton toggleTheme={toggleTheme} />
     </NavWrapper>
   );
 };

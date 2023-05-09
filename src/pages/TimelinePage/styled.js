@@ -38,8 +38,8 @@ export const ValueSelector = styled.select`
   font-weight: 500;
   font-size: 30px;
   line-height: 45px;
-  background-color: black;
-  color: white;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
   border-radius: 5px;
   border-color: #9e9e9e;
   padding: 0px 12px;

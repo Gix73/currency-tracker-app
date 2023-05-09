@@ -21,7 +21,7 @@ export const ModalContainer = styled.div`
   width: 100%;
   /* height: 1000px; */
   padding: 30px;
-  background-color: black;
+  background-color: ${(props) => props.theme.exchangeColor};
   border-radius: 20px;
 `;
 

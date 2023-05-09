@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input, StyledLabel } from "./styled";
 
-const ToggleButton = () => {
+const ToggleButton = ({ toggleTheme }) => {
   const [switchState, setSwitchState] = useState(true);
+
+  useEffect(() => {
+    switchState ? toggleTheme("dark") : toggleTheme("light");
+  }, [switchState]);
 
   function handleOnChange() {
     setSwitchState(!switchState);
