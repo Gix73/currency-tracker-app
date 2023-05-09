@@ -5,14 +5,6 @@ import { exchangeValues } from "../../constants/exchangeValues";
 import { useEffect } from "react";
 
 const Home = ({ data, showModal, exchangeHandler }) => {
-  useEffect(() => {
-    console.log("Home Mount");
-    return () => {
-      console.log("Home UnMount");
-    };
-  }),
-    [];
-
   function createItems() {
     let components = [];
 

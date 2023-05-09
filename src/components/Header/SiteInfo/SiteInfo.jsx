@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   H1,
   HugeLogo,
@@ -27,4 +28,4 @@ const SiteInfo = () => {
   );
 };
 
-export default SiteInfo;
+export default memo(SiteInfo);

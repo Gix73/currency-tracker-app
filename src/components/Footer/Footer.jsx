@@ -15,14 +15,6 @@ import {
 } from "./styled";
 
 const Footer = () => {
-  useEffect(() => {
-    console.log("Footer Mount");
-    return () => {
-      console.log("Footer UnMount");
-    };
-  }),
-    [];
-
   return (
     <FooterWrapper>
       <FooterContainer>

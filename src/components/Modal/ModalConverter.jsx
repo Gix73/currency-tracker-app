@@ -23,15 +23,11 @@ const ModalConverter = ({
 }) => {
   const [amount, setAmount] = useState(1);
   const [to, setTo] = useState("usd");
-  useEffect(() => {
-    console.log("Modal Mount");
-    return () => {
-      console.log("Modal UnMount");
-    };
-  }, []);
 
   function convert() {
-    return "" + (1 / data[exchangeData.from]) * (1 * data[to]) * amount;
+    return (
+      "" + ((1 / data[exchangeData.from]) * (1 * data[to]) * amount).toFixed(9)
+    );
   }
 
   return (

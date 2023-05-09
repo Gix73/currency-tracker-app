@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Logo, StyledLink } from "../../../globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
 import { NavContainer, NavWrapper } from "./styled";
@@ -25,4 +26,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default memo(Nav);

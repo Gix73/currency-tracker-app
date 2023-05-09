@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Span, UpdateImg, UpdateWrapper, UpdaterContainer } from "./styled";
 
 const UpdateInfo = () => {
@@ -11,4 +12,4 @@ const UpdateInfo = () => {
   );
 };
 
-export default UpdateInfo;
+export default memo(UpdateInfo);

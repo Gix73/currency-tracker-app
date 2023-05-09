@@ -7,23 +7,7 @@ import {
   InfoSpan,
 } from "./styled";
 
-const InfoCard = ({
-  firstVal,
-  name,
-  sign,
-  url,
-  data,
-  showModal,
-  exchangeHandler,
-}) => {
-  useEffect(() => {
-    console.log("InfoCard Mount");
-    return () => {
-      console.log("InfoCard UnMount");
-    };
-  }),
-    [];
-
+const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
   function convert() {
     return (1 / data[firstVal]).toFixed(6);
   }
@@ -31,12 +15,11 @@ const InfoCard = ({
   return (
     <InfoCardWrapper
       onClick={() => {
-        // showModal("hi");
-        showModal(true);
-        exchangeHandler(firstVal, "usd");
+        onShow(true);
+        onExchange(firstVal, "usd");
       }}
     >
-      <CardImg url={url} />
+      <CardImg url={urlImg} />
       <InfoContainer>
         <InfoSpan>{name}</InfoSpan>
         <CostSpan>

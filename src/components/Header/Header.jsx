@@ -5,13 +5,6 @@ import UpdateInfo from "./UpdateInfo/UpdateInfo.jsx";
 import { HeaderWrapper } from "./styled";
 
 const Header = () => {
-  useEffect(() => {
-    console.log("Header Mount");
-    return () => {
-      console.log("Header UnMount");
-    };
-  }),
-    [];
   return (
     <HeaderWrapper>
       <Nav />

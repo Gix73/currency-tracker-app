@@ -1,22 +1,53 @@
-import { useEffect } from "react";
-import Home from "../../components/Home/Home";
-import { HomePageWrapper } from "./styled";
+import { useEffect, useMemo } from "react";
+// import Home from "../../components/Home/Home";
+import {
+  CategorySpan,
+  Container,
+  HomePageWrapper,
+  HomeWrapper,
+  Wrapper,
+} from "./styled";
+import InfoCard from "../../components/Home/InfoCard/InfoCard";
 
-const HomePage = ({ data, showModal, exchangeHandler }) => {
-  useEffect(() => {
-    console.log("HomePage Mount");
-    return () => {
-      console.log("HomePage UnMount");
-    };
-  }),
-    [];
+const HomePage = ({ data, onShow, onExchange, exchangeValues }) => {
+  function createItems() {
+    return Object.keys(exchangeValues).reduce(
+      (comp, e) => [
+        ...comp,
+        <InfoCard
+          key={e}
+          firstVal={e.toLowerCase()}
+          name={exchangeValues[e].name}
+          sign={exchangeValues[e].sign}
+          urlImg={exchangeValues[e].img}
+          data={data.usd}
+          onShow={onShow}
+          onExchange={onExchange}
+        />,
+      ],
+      []
+    );
+  }
+
+  const currencyCards = useMemo(() => createItems(), [data]);
+
   return (
     <HomePageWrapper>
-      <Home
-        data={data}
-        showModal={showModal}
-        exchangeHandler={exchangeHandler}
-      />
+      <HomeWrapper>
+        <Wrapper>
+          {/* <Container>
+            <CategorySpan>Ações</CategorySpan>
+          </Container>
+          <Container>
+            <InfoCard onShow={onShow} onExchange={onExchange} />
+            <InfoCard onShow={onShow} onExchange={onExchange} />
+          </Container> */}
+          <Container>
+            <CategorySpan>Cotações</CategorySpan>
+          </Container>
+          <Container>{currencyCards}</Container>
+        </Wrapper>
+      </HomeWrapper>
     </HomePageWrapper>
   );
 };

@@ -6,11 +6,15 @@ import HomePage from "./pages/HomePage/HomePage";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import ModalConverter from "./components/Modal/ModalConverter";
+import TimelinePage from "./pages/TimelinePage/TimelinePage";
+import { exchangeValues } from "./constants/exchangeValues";
 
 const App = () => {
-  const [exchange, setExchange] = useState({});
+  const [currencyData, setCurrencyData] = useState({});
+  const [candleData, setCandleData] = useState({});
   const [showModal, setShowModal] = useState(false);
-  const [listTo, setListTo] = useState([]);
+  const [listOfCurrencies, setListOfCurrencies] = useState([]);
+  const [chartCurrency, setChartCurrency] = useState("BTC");
   const exchangeData = useRef({ from: "", to: "" });
 
   useEffect(() => {
@@ -19,15 +23,25 @@ const App = () => {
         `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json`
       )
       .then((res) => {
-        setExchange(() => res.data);
-        setListTo(() => Object.keys(res.data.usd));
+        setCurrencyData(() => res.data);
+        setListOfCurrencies(() => Object.keys(res.data.usd));
       });
-    console.log(exchange);
-    console.log("App Mount");
-    return () => {
-      console.log("App UnMount");
-    };
   }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1DAY`,
+        {
+          headers: {
+            "X-CoinAPI-Key": "CB362F47-896C-4102-B4FE-F056876DD518",
+          },
+        }
+      )
+      .then((res) => {
+        setCandleData(() => res.data);
+      });
+  }, [chartCurrency]);
 
   function exchangeHandler(from, to) {
     exchangeData.current.from = from;
@@ -44,13 +58,24 @@ const App = () => {
             path="/"
             element={
               <HomePage
-                data={exchange}
-                showModal={setShowModal}
-                exchangeHandler={exchangeHandler}
+                data={currencyData}
+                onShow={setShowModal}
+                onExchange={exchangeHandler}
+                exchangeValues={exchangeValues}
               />
             }
           />
-          <Route path="/timeline" element={<></>} />
+          <Route
+            path="/timeline"
+            element={
+              <TimelinePage
+                candleData={candleData}
+                onCurrencyChange={setChartCurrency}
+                chartCurrency={chartCurrency}
+                exchangeValues={exchangeValues}
+              />
+            }
+          />
           {/*<Route path="/" element={} />         */}
         </Routes>
         <Footer />
@@ -60,18 +85,11 @@ const App = () => {
           show={showModal}
           closeHandler={setShowModal}
           exchangeData={exchangeData.current}
-          chooseList={listTo}
+          chooseList={listOfCurrencies}
           convTo={exchangeData.current.to}
-          data={exchange.usd}
+          data={currencyData.usd}
         />
       }
-      {/* {showModal && (
-        <ModalConverter
-          closeHandler={() => {
-            setShowModal((close) => !close);
-          }}
-        />
-      )} */}
     </AppWrapper>
   );
 };
