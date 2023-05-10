@@ -10,6 +10,11 @@ export const InfoCardWrapper = styled.div`
   background: ${(props) => props.theme.exchangeColor};
   border: 1px solid #474747;
   border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
 `;
 
 export const CardImg = styled.div`

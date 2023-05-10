@@ -10,6 +10,7 @@ import TimelinePage from "./pages/TimelinePage/TimelinePage";
 import { exchangeValues } from "./constants/exchangeValues";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./constants/themeData";
+import BankCardPage from "./pages/BankCardPage/BankCardPage";
 
 const App = () => {
   const [currencyData, setCurrencyData] = useState({});
@@ -37,7 +38,7 @@ const App = () => {
     //     `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1DAY`,
     //     {
     //       headers: {
-    //         "X-CoinAPI-Key": "CB362F47-896C-4102-B4FE-F056876DD518",
+    //         "X-CoinAPI-Key": process.env.REACT_APP_COINAPI_KEY,
     //       },
     //     }
     //   )
@@ -80,7 +81,10 @@ const App = () => {
                 />
               }
             />
-            {/*<Route path="/" element={} />         */}
+            <Route
+              path="/bankcard"
+              element={<BankCardPage exchangeValues={exchangeValues} />}
+            />
           </Routes>
           <Footer />
         </Container>
