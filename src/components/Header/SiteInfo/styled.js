@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../../assets/hugeLogo.svg";
+import logo from "@assets/hugeLogo.svg";
 
 export const InfoWarapper = styled.div`
   display: flex;

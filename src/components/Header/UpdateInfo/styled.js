@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../../assets/updaterImg.svg";
+import logo from "@assets/updaterImg.svg";
 
 export const UpdateWrapper = styled.div`
   display: flex;

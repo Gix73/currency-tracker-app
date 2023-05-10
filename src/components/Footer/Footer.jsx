@@ -1,5 +1,5 @@
-import { memo, useEffect } from "react";
-import { Logo, StyledLink } from "../../globalStyled/staticComponents";
+import { memo } from "react";
+import { Logo, StyledLink } from "@src/globalStyled/staticComponents";
 import {
   AboutSpan,
   AboutWrapper,

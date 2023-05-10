@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/miniLogo.svg";
+import logo from "@assets/miniLogo.svg";
 import styled from "styled-components";
 
 export const StyledLink = styled(NavLink)`

@@ -43,6 +43,14 @@ module.exports = (env) => {
     },
     resolve: {
       extensions: ["*", ".js", ".jsx"],
+      alias: {
+        "@assets": path.resolve(__dirname, "./src/assets"),
+        "@components": path.resolve(__dirname, "./src/components"),
+        "@constants": path.resolve(__dirname, "./src/constants"),
+        "@pages": path.resolve(__dirname, "./src/pages"),
+        "@src": path.resolve(__dirname, "./src"),
+        "@utils": path.resolve(__dirname, "./src/utils"),
+      },
     },
     plugins: [
       new CleanWebpackPlugin(),

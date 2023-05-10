@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Logo, StyledLink } from "../../../globalStyled/staticComponents.js";
+import { Logo, StyledLink } from "@src/globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
 import { NavContainer, NavWrapper } from "./styled";
 

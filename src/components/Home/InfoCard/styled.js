@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import icon from "../../../assets/cardIcons/Dollar.svg";
+import icon from "@assets/cardIcons/Dollar.svg";
 
 export const InfoCardWrapper = styled.div`
   display: flex;

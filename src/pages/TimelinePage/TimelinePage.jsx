@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import CandleStickChart from "../../components/Timeline/Chart";
+import CandleStickChart from "@components/Timeline/Chart";
 import {
   ChartContainer,
   ChartWrapper,

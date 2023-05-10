@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from "react";
-// import Home from "../../components/Home/Home";
+import { useMemo } from "react";
+
 import {
   CategorySpan,
   Container,
@@ -7,7 +7,7 @@ import {
   HomeWrapper,
   Wrapper,
 } from "./styled";
-import InfoCard from "../../components/Home/InfoCard/InfoCard";
+import InfoCard from "@components/Home/InfoCard/InfoCard";
 
 const HomePage = ({ data, onShow, onExchange, exchangeValues }) => {
   function createItems() {

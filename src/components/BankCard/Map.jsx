@@ -1,6 +1,5 @@
-import mapboxgl from "mapbox-gl";
-import Map, { Marker, Popup } from "react-map-gl";
-import { useEffect, useRef, useState } from "react";
+import Map, { Marker } from "react-map-gl";
+import { useEffect, useState } from "react";
 import { MapContainer } from "./styled";
 
 const MapGL = ({ markers }) => {

@@ -10,9 +10,9 @@ import {
   SearchWrapper,
   StyledSpan,
 } from "./styled";
-import MapGL from "../../components/BankCard/Map";
-import { banks } from "../../constants/banksCoord";
-import search_icon from "../../assets/search.svg";
+import MapGL from "@components/BankCard/Map";
+import { banks } from "@constants/banksCoord";
+import search_icon from "@assets/search.svg";
 
 const BankCardPage = ({ exchangeValues }) => {
   const [filterData, setFilterData] = useState([]);
@@ -38,9 +38,7 @@ const BankCardPage = ({ exchangeValues }) => {
   }
 
   function handleClear(e) {
-    if (e.key === "Enter") {
-      handleCurrency(e);
-    }
+    handleCurrency(e);
   }
 
   function handleCurrency(e) {
@@ -69,7 +67,7 @@ const BankCardPage = ({ exchangeValues }) => {
               ref={inpRef}
               placeholder="Сurrency search..."
               onChange={createFilterData}
-              onKeyDown={handleClear}
+              onClick={handleClear}
             />
             <Img src={search_icon} alt="loopa" />
           </InputContainer>

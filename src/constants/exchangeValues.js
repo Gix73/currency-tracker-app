@@ -1,13 +1,13 @@
-import usd_logo from "../assets/cardIcons/Dollar.svg";
-import ars_logo from "../assets/cardIcons/Peso_Argentino.svg";
-import cad_logo from "../assets/cardIcons/Canadian_Dollar.svg";
-import jpy_logo from "../assets/cardIcons/Yen.svg";
-import aud_logo from "../assets/cardIcons/Australian_Dollar.svg";
-import cny_logo from "../assets/cardIcons/Won.svg";
-import eur_logo from "../assets/cardIcons/Euro.svg";
-import btc_logo from "../assets/cardIcons/Bitcoin.svg";
-import gbp_logo from "../assets/cardIcons/Libra.svg";
-import eth_logo from "../assets/cardIcons/ethereum-eth.svg";
+import usd_logo from "@assets/cardIcons/Dollar.svg";
+import ars_logo from "@assets/cardIcons/Peso_Argentino.svg";
+import cad_logo from "@assets/cardIcons/Canadian_Dollar.svg";
+import jpy_logo from "@assets/cardIcons/Yen.svg";
+import aud_logo from "@assets/cardIcons/Australian_Dollar.svg";
+import cny_logo from "@assets/cardIcons/Won.svg";
+import eur_logo from "@assets/cardIcons/Euro.svg";
+import btc_logo from "@assets/cardIcons/Bitcoin.svg";
+import gbp_logo from "@assets/cardIcons/Libra.svg";
+import eth_logo from "@assets/cardIcons/ethereum-eth.svg";
 // import ars_logo from "../assets/cardIcons/";
 // import ars_logo from "../assets/cardIcons/";
 

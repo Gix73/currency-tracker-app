@@ -9,9 +9,9 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { candleData } from "../../constants/exchangeValues";
-import { parseData } from "../../utils/DataParser";
-import { labels, options, options_2 } from "../../constants/chartData";
+import { candleData } from "@constants/exchangeValues";
+import { parseData } from "@utils/DataParser";
+import { labels, options, options_2 } from "@constants/chartData";
 
 ChartJS.register(
   CategoryScale,
