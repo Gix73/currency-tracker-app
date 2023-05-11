@@ -1,4 +1,5 @@
 import CandleStickChart from "@components/Timeline/Chart";
+import { PropTypes } from "prop-types";
 import {
   ChartContainer,
   ChartWrapper,
@@ -38,6 +39,13 @@ const TimelinePage = ({
       </ChartWrapper>
     </TimelineWrapper>
   );
+};
+
+TimelinePage.propTypes = {
+  candleData: PropTypes.object,
+  onCurrencyChange: PropTypes.func,
+  chartCurrency: PropTypes.string,
+  exchangeValues: PropTypes.object,
 };
 
 export default TimelinePage;

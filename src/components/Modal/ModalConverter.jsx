@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PropTypes } from "prop-types";
 import {
   AmountInput,
   CloseBtn,
@@ -75,6 +76,14 @@ const ModalConverter = ({
       </ModalContainer>
     </ModalWrapper>
   );
+};
+
+ModalConverter.propTypes = {
+  data: PropTypes.object,
+  closeHandler: PropTypes.func,
+  show: PropTypes.bool,
+  exchangeData: PropTypes.object,
+  chooseList: PropTypes.array,
 };
 
 export default ModalConverter;

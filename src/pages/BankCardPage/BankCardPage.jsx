@@ -13,6 +13,7 @@ import {
 import MapGL from "@components/BankCard/Map";
 import { banks } from "@constants/banksCoord";
 import search_icon from "@assets/search.svg";
+import { PropTypes } from "prop-types";
 
 const BankCardPage = ({ exchangeValues }) => {
   const [filterData, setFilterData] = useState([]);
@@ -83,6 +84,10 @@ const BankCardPage = ({ exchangeValues }) => {
       </SearchWrapper>
     </MainWrapper>
   );
+};
+
+BankCardPage.propTypes = {
+  exchangeValues: PropTypes.object,
 };
 
 export default BankCardPage;

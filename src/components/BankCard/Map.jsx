@@ -1,6 +1,7 @@
 import Map, { Marker } from "react-map-gl";
 import { useEffect, useState } from "react";
 import { MapContainer } from "./styled";
+import { PropTypes } from "prop-types";
 
 const MapGL = ({ markers }) => {
   const [bankMarkets, setBankMarkers] = useState([]);
@@ -41,6 +42,10 @@ const MapGL = ({ markers }) => {
       </Map>
     </MapContainer>
   );
+};
+
+MapGL.propTypes = {
+  markers: PropTypes.array,
 };
 
 export default MapGL;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Input, StyledLabel } from "./styled";
+import { PropTypes } from "prop-types";
 
 const ToggleButton = ({ toggleTheme }) => {
   const [switchState, setSwitchState] = useState(true);
@@ -17,6 +18,10 @@ const ToggleButton = ({ toggleTheme }) => {
       <Input id="checkbox" checked={switchState} onChange={handleOnChange} />
     </StyledLabel>
   );
+};
+
+ToggleButton.propTypes = {
+  toggleTheme: PropTypes.func,
 };
 
 export default ToggleButton;

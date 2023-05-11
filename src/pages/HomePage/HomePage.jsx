@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-
+import { PropTypes } from "prop-types";
 import {
   CategorySpan,
   Container,
@@ -50,6 +50,13 @@ const HomePage = ({ data, onShow, onExchange, exchangeValues }) => {
       </HomeWrapper>
     </HomePageWrapper>
   );
+};
+
+HomePage.propTypes = {
+  data: PropTypes.object,
+  onShow: PropTypes.func,
+  onExchange: PropTypes.func,
+  exchangeValues: PropTypes.object,
 };
 
 export default HomePage;

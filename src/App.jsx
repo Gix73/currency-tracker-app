@@ -3,7 +3,7 @@ import Footer from "@components/Footer/Footer";
 import Header from "@components/Header/Header";
 import { AppWrapper, Container } from "./styled";
 import HomePage from "@pages/HomePage/HomePage";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import ModalConverter from "@components/Modal/ModalConverter";
 import TimelinePage from "@pages/TimelinePage/TimelinePage";
@@ -58,36 +58,35 @@ const App = () => {
       <AppWrapper>
         <Container>
           <Header toggleTheme={setThemeColor} />
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <HomePage
-                    data={currencyData}
-                    onShow={setShowModal}
-                    onExchange={exchangeHandler}
-                    exchangeValues={exchangeValues}
-                  />
-                }
-              />
-              <Route
-                path="/timeline"
-                element={
-                  <TimelinePage
-                    candleData={candleData}
-                    onCurrencyChange={setChartCurrency}
-                    chartCurrency={chartCurrency}
-                    exchangeValues={exchangeValues}
-                  />
-                }
-              />
-              <Route
-                path="/bankcard"
-                element={<BankCardPage exchangeValues={exchangeValues} />}
-              />
-            </Routes>
-          </Suspense>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  data={currencyData}
+                  onShow={setShowModal}
+                  onExchange={exchangeHandler}
+                  exchangeValues={exchangeValues}
+                />
+              }
+            />
+            <Route
+              path="/timeline"
+              element={
+                <TimelinePage
+                  candleData={candleData}
+                  onCurrencyChange={setChartCurrency}
+                  chartCurrency={chartCurrency}
+                  exchangeValues={exchangeValues}
+                />
+              }
+            />
+            <Route
+              path="/bankcard"
+              element={<BankCardPage exchangeValues={exchangeValues} />}
+            />
+          </Routes>
+
           <Footer />
         </Container>
         {
@@ -96,7 +95,7 @@ const App = () => {
             closeHandler={setShowModal}
             exchangeData={exchangeData.current}
             chooseList={listOfCurrencies}
-            convTo={exchangeData.current.to}
+            // convTo={exchangeData.current.to}
             data={currencyData.usd}
           />
         }

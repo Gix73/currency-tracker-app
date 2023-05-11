@@ -12,6 +12,7 @@ import { Bar } from "react-chartjs-2";
 import { candleData } from "@constants/exchangeValues";
 import { parseData } from "@utils/DataParser";
 import { labels, options, options_2 } from "@constants/chartData";
+import { PropTypes } from "prop-types";
 
 ChartJS.register(
   CategoryScale,
@@ -38,6 +39,10 @@ const CandleStickChart = ({ candleData }) => {
       <Bar options={options_2} data={tradeData} />
     </>
   );
+};
+
+CandleStickChart.propTypes = {
+  candleData: PropTypes.object,
 };
 
 export default CandleStickChart;

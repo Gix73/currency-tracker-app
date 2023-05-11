@@ -2,6 +2,7 @@ import { memo } from "react";
 import { Logo, StyledLink } from "@src/globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
 import { NavContainer, NavWrapper } from "./styled";
+import { PropTypes } from "prop-types";
 
 const Nav = ({ toggleTheme }) => {
   return (
@@ -24,6 +25,10 @@ const Nav = ({ toggleTheme }) => {
       <ToggleButton toggleTheme={toggleTheme} />
     </NavWrapper>
   );
+};
+
+Nav.propTypes = {
+  toggleTheme: PropTypes.func,
 };
 
 export default memo(Nav);

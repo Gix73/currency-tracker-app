@@ -5,6 +5,7 @@ import {
   InfoContainer,
   InfoSpan,
 } from "./styled";
+import { PropTypes } from "prop-types";
 
 const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
   function convert() {
@@ -28,6 +29,15 @@ const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
       </InfoContainer>
     </InfoCardWrapper>
   );
+};
+
+InfoCard.propTypes = {
+  firstVal: PropTypes.string,
+  onShow: PropTypes.func,
+  onExchange: PropTypes.func,
+  data: PropTypes.object,
+  name: PropTypes.string,
+  urlImg: PropTypes.string,
 };
 
 export default InfoCard;
