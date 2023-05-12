@@ -21,7 +21,7 @@ export const exchangeValues = {
   EUR: { name: "Euro", sign: "€", img: eur_logo },
   BTC: { name: "Bitcoin", sign: "₿", img: btc_logo },
   GBP: { name: "Libra", sign: "₱", img: gbp_logo },
-  ETH: { name: "Etherial", sign: "E", img: eth_logo },
+  ETH: { name: "Ethereum", sign: "E", img: eth_logo },
 };
 
 export const candleData = {

@@ -14,6 +14,7 @@ const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
 
   return (
     <InfoCardWrapper
+      id={`card-${firstVal}`}
       onClick={() => {
         onShow(true);
         onExchange(firstVal, "usd");

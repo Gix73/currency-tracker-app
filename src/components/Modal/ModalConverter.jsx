@@ -38,7 +38,7 @@ const ModalConverter = ({
       }}
       show={show}
     >
-      <ModalContainer onClick={(e) => e.stopPropagation()}>
+      <ModalContainer id="modal-container" onClick={(e) => e.stopPropagation()}>
         <CloseBtn onClick={closeHandler} />
         <TitleSpan>Converter</TitleSpan>
         <ExchangeWrapper>
@@ -71,7 +71,7 @@ const ModalConverter = ({
         </ExchangeWrapper>
         <ResWrapper>
           <InpSpan>Convertation:</InpSpan>
-          <InpSpan>{data ? convert() : ""}</InpSpan>
+          <InpSpan id="conv-res">{data ? convert() : ""}</InpSpan>
         </ResWrapper>
       </ModalContainer>
     </ModalWrapper>

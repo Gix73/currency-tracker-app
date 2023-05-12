@@ -30,7 +30,7 @@ const TimelinePage = ({
         </ValueSelector>
       </SelectWrapper>
       <ChartWrapper>
-        <CurrencyContainer>
+        <CurrencyContainer id="currency-id">
           <ImgContainer urlImg={exchangeValues[chartCurrency].img} />
           <StyledSpan>{exchangeValues[chartCurrency].name}</StyledSpan>
         </CurrencyContainer>
