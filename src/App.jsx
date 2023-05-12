@@ -39,18 +39,18 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // axios
-    //   .get(
-    //     `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1MTH`,
-    //     {
-    //       headers: {
-    //         "X-CoinAPI-Key": process.env.REACT_APP_COINAPI_KEY,
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     setCandleData(() => res.data);
-    //   });
+    axios
+      .get(
+        `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1MTH`,
+        {
+          headers: {
+            "X-CoinAPI-Key": process.env.REACT_APP_COINAPI_KEY,
+          },
+        }
+      )
+      .then((res) => {
+        setCandleData(() => res.data);
+      });
     setLastUpdateTime(new Date().toLocaleTimeString());
   }, [chartCurrency]);
 

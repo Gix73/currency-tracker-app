@@ -15,7 +15,7 @@ export const options = {
   scales: {
     x: {
       stacked: true,
-      display: false,
+      display: true,
     },
     y: {
       stacked: false,
@@ -42,7 +42,7 @@ export const options_2 = {
   scales: {
     x: {
       stacked: true,
-      display: false,
+      display: true,
     },
     y: {
       stacked: false,

@@ -6,7 +6,7 @@ export const AppWrapper = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.text};
-  min-width: 375px;
+  min-width: 360px;
 `;
 
 export const Container = styled.div`
