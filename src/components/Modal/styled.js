@@ -23,6 +23,9 @@ export const ModalContainer = styled.div`
   padding: 30px;
   background-color: ${(props) => props.theme.exchangeColor};
   border-radius: 20px;
+  @media (max-width: 1060px) {
+    max-width: 500px;
+  }
 `;
 
 export const StyledSelect = styled.select`
@@ -31,11 +34,20 @@ export const StyledSelect = styled.select`
   font-size: 30px;
   color: black;
   text-align: center;
+  @media (max-width: 1060px) {
+    font-size: 15px;
+    height: 30px;
+    width: 100%;
+  }
 `;
 
 export const StyledOption = styled.option`
   color: black;
   font-size: 20px;
+  @media (max-width: 1060px) {
+    font-size: 15px;
+    height: 30px;
+  }
 `;
 export const TitleSpan = styled.span`
   display: flex;
@@ -44,6 +56,9 @@ export const TitleSpan = styled.span`
   font-weight: 400;
   font-size: 55px;
   line-height: 41px;
+  @media (max-width: 1060px) {
+    font-size: 20px;
+  }
 `;
 
 export const ExchangeWrapper = styled.div`
@@ -62,6 +77,13 @@ export const StyledDiv = styled.div`
   color: black;
   background-color: white;
   text-align: center;
+  @media (max-width: 1060px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    height: 30px;
+  }
 `;
 
 export const InpWrapper = styled.div`
@@ -69,6 +91,9 @@ export const InpWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1060px) {
+    width: 100px;
+  }
 `;
 
 export const AmountInput = styled.input`
@@ -78,11 +103,18 @@ export const AmountInput = styled.input`
   font-size: 30px;
   color: black;
   text-align: center;
+  @media (max-width: 1060px) {
+    font-size: 15px;
+    height: 30px;
+  }
 `;
 
 export const InpSpan = styled.span`
   font-weight: 300;
   font-size: 35px;
+  @media (max-width: 1060px) {
+    font-size: 18px;
+  }
 `;
 
 export const ResWrapper = styled.div`
@@ -113,5 +145,14 @@ export const CloseBtn = styled.div`
   }
   &:after {
     transform: rotate(-45deg);
+  }
+  @media (max-width: 1060px) {
+    width: 30px;
+    height: 30px;
+    &:after,
+    :before {
+      width: 15px;
+      height: 4px;
+    }
   }
 `;

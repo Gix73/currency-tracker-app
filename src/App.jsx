@@ -11,6 +11,7 @@ import { exchangeValues } from "@constants/exchangeValues";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@constants/themeData";
 import BankCardPage from "@pages/BankCardPage/BankCardPage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 
 const App = () => {
   const [currencyData, setCurrencyData] = useState({});
@@ -19,6 +20,9 @@ const App = () => {
   const [listOfCurrencies, setListOfCurrencies] = useState([]);
   const [chartCurrency, setChartCurrency] = useState("BTC");
   const [themeColor, setThemeColor] = useState("dark");
+  const [lastUpdateTime, setLastUpdateTime] = useState(
+    new Date().toLocaleTimeString()
+  );
   const exchangeData = useRef({ from: "", to: "" });
 
   useEffect(() => {
@@ -33,18 +37,19 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    // axios
-    //   .get(
-    //     `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1DAY`,
-    //     {
-    //       headers: {
-    //         "X-CoinAPI-Key": process.env.REACT_APP_COINAPI_KEY,
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     setCandleData(() => res.data);
-    //   });
+    axios
+      .get(
+        `https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_${chartCurrency}_USD/latest?period_id=1MTH`,
+        {
+          headers: {
+            "X-CoinAPI-Key": process.env.REACT_APP_COINAPI_KEY,
+          },
+        }
+      )
+      .then((res) => {
+        setCandleData(() => res.data);
+      });
+    setLastUpdateTime(new Date().toLocaleTimeString());
   }, [chartCurrency]);
 
   function exchangeHandler(from, to) {
@@ -57,7 +62,7 @@ const App = () => {
     <ThemeProvider theme={theme[themeColor]}>
       <AppWrapper>
         <Container>
-          <Header toggleTheme={setThemeColor} />
+          <Header toggleTheme={setThemeColor} lastUpdate={lastUpdateTime} />
           <Routes>
             <Route
               path="/"
@@ -85,6 +90,7 @@ const App = () => {
               path="/bankcard"
               element={<BankCardPage exchangeValues={exchangeValues} />}
             />
+            <Route path="/contacts" element={<ContactsPage />} />
           </Routes>
 
           <Footer />
@@ -95,7 +101,6 @@ const App = () => {
             closeHandler={setShowModal}
             exchangeData={exchangeData.current}
             chooseList={listOfCurrencies}
-            // convTo={exchangeData.current.to}
             data={currencyData.usd}
           />
         }

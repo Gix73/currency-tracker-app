@@ -1,13 +1,13 @@
 import { memo } from "react";
-import { Logo, StyledLink } from "@src/globalStyled/staticComponents.js";
 import ToggleButton from "../ToggleButton/ToggleButton.jsx";
-import { NavContainer, NavWrapper } from "./styled";
+import { Logo, NavContainer, NavWrapper, StyledLink } from "./styled";
 import { PropTypes } from "prop-types";
+import logo from "@assets/miniLogo.svg";
 
 const Nav = ({ toggleTheme }) => {
   return (
     <NavWrapper>
-      <Logo />
+      <Logo src={logo} alt="logo" />
       <NavContainer>
         <div>
           <StyledLink to="/">Home</StyledLink>
@@ -19,7 +19,7 @@ const Nav = ({ toggleTheme }) => {
           <StyledLink to="/bankcard">Bank card</StyledLink>
         </div>
         <div>
-          <StyledLink to="/">Contato</StyledLink>
+          <StyledLink to="/contacts">Contato</StyledLink>
         </div>
       </NavContainer>
       <ToggleButton toggleTheme={toggleTheme} />

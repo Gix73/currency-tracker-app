@@ -6,6 +6,9 @@ export const MainWrapper = styled.main`
   width: 100%;
   flex-grow: 1;
   padding: 60px 80px;
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
 `;
 
 export const SearchWrapper = styled.div`
@@ -19,6 +22,9 @@ export const StyledSpan = styled.span`
   font-weight: 400;
   font-size: 38px;
   line-height: 57px;
+  @media (max-width: 1060px) {
+    font-size: 20px;
+  }
 `;
 
 export const Input = styled.input`
@@ -38,6 +44,9 @@ export const SearchContainer = styled.div`
   max-width: 450px;
   width: 100%;
   z-index: 999;
+  @media (max-width: 1060px) {
+    max-width: 350px;
+  }
 `;
 
 export const ItemsWrapper = styled.div`

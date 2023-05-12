@@ -81,7 +81,7 @@ const ModalConverter = ({
 ModalConverter.propTypes = {
   data: PropTypes.object,
   closeHandler: PropTypes.func,
-  show: PropTypes.bool,
+  show: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   exchangeData: PropTypes.object,
   chooseList: PropTypes.array,
 };

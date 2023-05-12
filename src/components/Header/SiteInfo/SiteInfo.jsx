@@ -1,4 +1,5 @@
 import { memo } from "react";
+import logo from "@assets/hugeLogo.svg";
 import {
   H1,
   HugeLogo,
@@ -22,7 +23,7 @@ const SiteInfo = () => {
           </Name>
           <LowSpan>Cotacão do dólar e outras moedas internacionais.</LowSpan>
         </Info>
-        <HugeLogo />
+        <HugeLogo src={logo} alt="logo" />
       </InfoContainer>
     </InfoWarapper>
   );

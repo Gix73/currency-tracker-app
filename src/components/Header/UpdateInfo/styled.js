@@ -14,17 +14,30 @@ export const UpdateWrapper = styled.div`
 export const UpdaterContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 510px;
+  align-items: center;
+  /* width: 510px; */
 `;
 
 export const Span = styled.span`
   font-size: 33px;
   line-height: 41px;
+  padding-left: 20px;
+  @media (max-width: 1060px) {
+    font-size: 23px;
+  }
+  @media (max-width: 768px) {
+    font-size: 17px;
+    padding-left: 15px;
+  }
 `;
 
-export const UpdateImg = styled.div`
+export const UpdateImg = styled.img`
   width: 33px;
   height: 34px;
   border-radius: 50%;
-  background-image: url(${logo});
+  background-repeat: no-repeat;
+  @media (max-width: 1060px) {
+    width: 20px;
+    height: 20px;
+  }
 `;

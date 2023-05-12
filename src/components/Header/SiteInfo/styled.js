@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "@assets/hugeLogo.svg";
 
 export const InfoWarapper = styled.div`
   display: flex;
@@ -13,6 +12,13 @@ export const InfoWarapper = styled.div`
   filter: drop-shadow(rgba(52, 182, 25, 0.8) 0px 0px 1px);
   padding-top: 40px;
   padding-left: 63px;
+  @media (max-width: 1060px) {
+    height: auto;
+    padding-top: 0px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -20,15 +26,27 @@ export const InfoContainer = styled.div`
   max-width: 1065px;
   width: 100%;
   height: 325px;
+  @media (max-width: 1060px) {
+    justify-content: space-evenly;
+  }
+  @media (max-width: 768px) {
+    height: 225px;
+  }
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   height: 100%;
   margin-right: 65px;
+  @media (max-width: 1060px) {
+    align-items: flex-start;
+    justify-content: space-evenly;
+    max-width: 450px;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -39,13 +57,17 @@ export const Name = styled.div`
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  width: 701px;
-  height: 221px;
+  max-width: 701px;
+  width: 100%;
+  max-height: 221px;
+  @media (max-width: 1060px) {
+    align-items: flex-start;
+  }
 `;
 
 export const MainSpan = styled.div`
   font-weight: 600;
-  font-size: 76px;
+  font-size: 65px;
   line-height: 114px;
   background: linear-gradient(
     90.18deg,
@@ -56,6 +78,16 @@ export const MainSpan = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  @media (max-width: 1060px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    line-height: 25px;
+  }
 `;
 
 export const LowSpan = styled.div`
@@ -63,13 +95,34 @@ export const LowSpan = styled.div`
   align-items: center;
   font-size: 25px;
   line-height: 47px;
-  width: 332px;
-  height: 96px;
+  max-width: 332px;
+  width: 100%;
+  /* height: 96px; */
   text-align: center;
+  @media (max-width: 1060px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    line-height: 25px;
+  }
 `;
 
-export const HugeLogo = styled.div`
-  background-image: url("${logo}");
-  width: 299.43px;
-  height: 312.74px;
+// export const HugeLogo = styled.div`
+//   background-image: url("${logo}");
+//   width: 299.43px;
+//   height: 312.74px;
+// `;
+export const HugeLogo = styled.img`
+  background: transparent;
+  background-repeat: no-repeat;
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  @media (max-width: 1060px) {
+    max-width: 200px;
+  }
+  @media (max-width: 768px) {
+    max-width: 100px;
+  }
 `;

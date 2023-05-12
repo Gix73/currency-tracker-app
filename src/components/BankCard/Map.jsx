@@ -34,7 +34,7 @@ const MapGL = ({ markers }) => {
           zoom: 10,
           attributionControl: false,
         }}
-        style={{ width: "100%", height: "100%" }}
+        // style={{ width: "100%", height: "100%" }}
         mapStyle="mapbox://styles/mapbox/streets-v12"
         mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
       >

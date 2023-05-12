@@ -26,12 +26,12 @@ ChartJS.register(
 export const [data, tradeData] = parseData(candleData, labels);
 
 const CandleStickChart = ({ candleData }) => {
-  // const labels = useMemo(() => Object.keys(candleData), [candleData]);
+  const labels = useMemo(() => Object.keys(candleData), [candleData]);
 
-  // const [data, tradeData] = useMemo(
-  //   () => parseData(candleData, labels),
-  //   [candleData]
-  // );
+  const [data, tradeData] = useMemo(
+    () => parseData(candleData, labels),
+    [candleData]
+  );
 
   return (
     <>
@@ -42,7 +42,7 @@ const CandleStickChart = ({ candleData }) => {
 };
 
 CandleStickChart.propTypes = {
-  candleData: PropTypes.object,
+  candleData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 export default CandleStickChart;

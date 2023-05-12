@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import icon from "@assets/cardIcons/Dollar.svg";
 
 export const InfoCardWrapper = styled.div`
   display: flex;
@@ -15,15 +14,22 @@ export const InfoCardWrapper = styled.div`
     transform: scale(1.1);
     transition: 0.5s;
   }
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
-export const CardImg = styled.div`
-  width: 80px;
-  height: 80px;
-  background-image: ${(props) =>
-    props.url ? `url('${props.url}');` : `url("${icon}");`};
+export const CardImg = styled.img`
+  background: transparent;
   background-repeat: no-repeat;
-  padding-right: 110px;
+  width: 80px;
+  height: 100%;
+  @media (max-width: 1060px) {
+    width: 50px;
+  }
+  @media (max-width: 768px) {
+    width: 35px;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -31,16 +37,34 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: auto;
+  padding-left: 40px;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+  }
 `;
 
 export const InfoSpan = styled.span`
   font-weight: 400;
   font-size: 35px;
   line-height: 49px;
+  @media (max-width: 1060px) {
+    font-size: 20px;
+    line-height: normal;
+  }
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 export const CostSpan = styled.span`
   font-weight: 300;
   font-size: 32px;
   line-height: 41px;
+  @media (max-width: 1060px) {
+    font-size: 20px;
+    line-height: normal;
+  }
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 `;

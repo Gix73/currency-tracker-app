@@ -5,6 +5,7 @@ import {
   ChartWrapper,
   CurrencyContainer,
   ImgContainer,
+  Option,
   SelectWrapper,
   StyledSpan,
   TimelineWrapper,
@@ -24,8 +25,8 @@ const TimelinePage = ({
           value={chartCurrency}
           onChange={(e) => onCurrencyChange(e.target.value)}
         >
-          <option value={"BTC"}>Bitcoin</option>
-          <option value={"ETH"}>Ethereum</option>
+          <Option value={"BTC"}>Bitcoin</Option>
+          <Option value={"ETH"}>Ethereum</Option>
         </ValueSelector>
       </SelectWrapper>
       <ChartWrapper>
@@ -42,7 +43,7 @@ const TimelinePage = ({
 };
 
 TimelinePage.propTypes = {
-  candleData: PropTypes.object,
+  candleData: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   onCurrencyChange: PropTypes.func,
   chartCurrency: PropTypes.string,
   exchangeValues: PropTypes.object,

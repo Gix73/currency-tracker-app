@@ -19,7 +19,7 @@ const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
         onExchange(firstVal, "usd");
       }}
     >
-      <CardImg url={urlImg} />
+      <CardImg src={urlImg} alt="currency_logo" />
       <InfoContainer>
         <InfoSpan>{name}</InfoSpan>
         <CostSpan>

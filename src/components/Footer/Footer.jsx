@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Logo, StyledLink } from "@src/globalStyled/staticComponents";
+import logo from "@assets/miniLogo.svg";
 import {
   AboutSpan,
   AboutWrapper,
@@ -8,9 +8,11 @@ import {
   FooterInfoSpan,
   FooterWrapper,
   LinksWrapper,
+  Logo,
   NavContainer,
   NavFooterSpan,
   NavLinksContainer,
+  StyledLink,
   StyledSpan,
 } from "./styled";
 
@@ -20,7 +22,7 @@ const Footer = () => {
       <FooterContainer>
         <AboutWrapper>
           <CompanyWrapper>
-            <Logo />
+            <Logo src={logo} alt="logo" />
             <StyledSpan>Modsen Currency Tracker</StyledSpan>
           </CompanyWrapper>
           <AboutSpan>

@@ -4,6 +4,15 @@ export const HomePageWrapper = styled.main`
   display: flex;
   flex-grow: 1;
   padding: 0px 120px;
+  @media (max-width: 1060px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: 376px) {
+    padding: 0px 10px;
+  }
 `;
 export const HomeWrapper = styled.div`
   display: flex;
@@ -21,9 +30,15 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 184px;
+  column-gap: 114px;
   row-gap: 50px;
   padding-top: 50px;
+  @media (max-width: 1060px) {
+    gap: 50px;
+  }
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 export const CategorySpan = styled.span`
@@ -32,4 +47,8 @@ export const CategorySpan = styled.span`
   line-height: 41px;
   border-bottom: 1px solid #474747;
   padding-bottom: 20px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
 `;

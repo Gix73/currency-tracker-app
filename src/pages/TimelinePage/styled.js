@@ -7,6 +7,9 @@ export const TimelineWrapper = styled.main`
   width: 100%;
   flex-grow: 1;
   padding: 60px 80px;
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
 `;
 
 export const SelectWrapper = styled.div`
@@ -29,6 +32,9 @@ export const SelectWrapper = styled.div`
     font-size: 30px;
     color: #9e9e9e;
   }
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
 `;
 
 export const ValueSelector = styled.select`
@@ -44,12 +50,28 @@ export const ValueSelector = styled.select`
   border-color: #9e9e9e;
   padding: 0px 12px;
   appearance: none;
+  @media (max-width: 1060px) {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+`;
+
+export const Option = styled.option`
+  font-size: 30px;
+  @media (max-width: 1060px) {
+    font-size: 15px;
+  }
 `;
 
 export const CurrencyContainer = styled.div`
   display: flex;
   align-items: center;
   width: 400px;
+  @media (max-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const ImgContainer = styled.div`
@@ -62,12 +84,21 @@ export const ImgContainer = styled.div`
   background-size: cover;
   background-position: center;
   margin-right: 50px;
+
+  @media (max-width: 1060px) {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
 `;
 
 export const StyledSpan = styled.span`
   font-weight: 400;
   font-size: 35px;
   line-height: 49px;
+  @media (max-width: 1060px) {
+    font-size: 25px;
+  }
 `;
 
 export const ChartWrapper = styled.div`
@@ -75,6 +106,9 @@ export const ChartWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 160px;
+  @media (max-width: 768px) {
+    padding-top: 50px;
+  }
 `;
 
 export const ChartContainer = styled.div`
