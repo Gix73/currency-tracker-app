@@ -2,7 +2,6 @@ export const options = {
   plugins: {
     title: {
       display: true,
-      // text: "Chart.js Bar Chart - Stacked",
     },
     legend: {
       display: false,
@@ -29,7 +28,6 @@ export const options_2 = {
   plugins: {
     title: {
       display: true,
-      // text: "Chart.js Bar Chart - Stacked",
     },
     legend: {
       display: false,

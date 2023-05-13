@@ -63,6 +63,9 @@ export const SearchItem = styled.div`
   padding-left: 30px;
   color: ${(props) => props.theme.text};
   cursor: pointer;
+  &:hover {
+    color: #63db10;
+  }
 `;
 
 export const InputContainer = styled.div`

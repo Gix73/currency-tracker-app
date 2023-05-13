@@ -8,7 +8,7 @@ const UpdateInfo = ({ lastUpdate }) => {
     <UpdateWrapper>
       <UpdaterContainer>
         <UpdateImg src={logo} alt="circle" />
-        <Span>Last update at {lastUpdate}</Span>
+        <Span data-testid="update-span">Last update at {lastUpdate}</Span>
       </UpdaterContainer>
     </UpdateWrapper>
   );

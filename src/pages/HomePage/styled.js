@@ -14,6 +14,7 @@ export const HomePageWrapper = styled.main`
     padding: 0px 10px;
   }
 `;
+
 export const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;

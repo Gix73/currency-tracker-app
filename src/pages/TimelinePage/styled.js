@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bitcoin_icon from "@assets/cardIcons/Bitcoin.svg";
-//ethereum-eth.svg
+
 export const TimelineWrapper = styled.main`
   display: flex;
   flex-direction: column;

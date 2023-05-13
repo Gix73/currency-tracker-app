@@ -17,5 +17,10 @@
                 "fileName": false
             }
         ]
-    ]
+    ],
+    "env": {
+        "test": {
+          "plugins": ["dynamic-import-node"]
+        }
+      }
 }

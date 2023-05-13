@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ModalWrapper = styled.div`
   position: fixed;
-  /* display: flex; */
   display: ${(props) => (props.show == true ? "flex" : "none")};
   align-items: center;
   justify-content: center;
@@ -19,7 +18,6 @@ export const ModalContainer = styled.div`
   justify-content: center;
   max-width: 1000px;
   width: 100%;
-  /* height: 1000px; */
   padding: 30px;
   background-color: ${(props) => props.theme.exchangeColor};
   border-radius: 20px;

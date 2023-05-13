@@ -8,8 +8,6 @@ import eur_logo from "@assets/cardIcons/Euro.svg";
 import btc_logo from "@assets/cardIcons/Bitcoin.svg";
 import gbp_logo from "@assets/cardIcons/Libra.svg";
 import eth_logo from "@assets/cardIcons/ethereum-eth.svg";
-// import ars_logo from "../assets/cardIcons/";
-// import ars_logo from "../assets/cardIcons/";
 
 export const exchangeValues = {
   USD: { name: "Dólar comercial", sign: "$", img: usd_logo },
@@ -338,6 +336,45 @@ export const candleData = {
     volume_traded: 66278.98170866,
   },
   26: {
+    price_close: 20059,
+    price_high: 25212,
+    price_low: 19526,
+    price_open: 23287.38,
+    time_close: "2022-08-31T23:59:30.9790000Z",
+    time_open: "2022-08-01T00:00:19.2670000Z",
+    time_period_end: "2022-09-01T00:00:00.0000000Z",
+    time_period_start: "2022-08-01T00:00:00.0000000Z",
+    trades_count: 351888,
+    volume_traded: 48002.28964294,
+  },
+};
+
+export const testCandleData = {
+  0: {
+    price_close: 28844,
+    price_high: 29378,
+    price_low: 27666,
+    price_open: 29254,
+    time_close: "2023-05-04T19:30:16.4930000Z",
+    time_open: "2023-05-01T00:00:08.3360000Z",
+    time_period_end: "2023-06-01T00:00:00.0000000Z",
+    time_period_start: "2023-05-01T00:00:00.0000000Z",
+    trades_count: 74709,
+    volume_traded: 9044.55018518,
+  },
+  1: {
+    price_close: 23127,
+    price_high: 23954,
+    price_low: 13000,
+    price_open: 16530,
+    time_close: "2023-01-31T23:59:31.0120000Z",
+    time_open: "2023-01-01T00:00:30.1080000Z",
+    time_period_end: "2023-02-01T00:00:00.0000000Z",
+    time_period_start: "2023-01-01T00:00:00.0000000Z",
+    trades_count: 444251,
+    volume_traded: 66278.98170866,
+  },
+  2: {
     price_close: 20059,
     price_high: 25212,
     price_low: 19526,

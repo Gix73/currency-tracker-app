@@ -57,7 +57,6 @@ const App = () => {
   function exchangeHandler(from, to) {
     exchangeData.current.from = from;
     exchangeData.current.to = to;
-    console.log(exchangeData);
   }
 
   return (

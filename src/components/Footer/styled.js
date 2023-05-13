@@ -7,7 +7,6 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  /* height: 520px; */
   padding: 90px 120px 40px;
   flex-shrink: 0;
   @media (max-width: 1060px) {
@@ -20,7 +19,6 @@ export const FooterWrapper = styled.footer`
 
 export const FooterContainer = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
   height: 100%;
   padding-bottom: 50px;
@@ -165,7 +163,4 @@ export const StyledLink = styled(NavLink)`
   @media (max-width: 1060px) {
     font-size: 15px;
   }
-  /* &[aria-current] {
-    text-decoration: underline;
-  } */
 `;

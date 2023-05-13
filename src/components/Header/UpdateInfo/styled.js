@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "@assets/updaterImg.svg";
 
 export const UpdateWrapper = styled.div`
   display: flex;
@@ -15,7 +14,6 @@ export const UpdaterContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* width: 510px; */
 `;
 
 export const Span = styled.span`

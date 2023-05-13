@@ -35,13 +35,6 @@ const HomePage = ({ data, onShow, onExchange, exchangeValues }) => {
     <HomePageWrapper>
       <HomeWrapper>
         <Wrapper>
-          {/* <Container>
-            <CategorySpan>Ações</CategorySpan>
-          </Container>
-          <Container>
-            <InfoCard onShow={onShow} onExchange={onExchange} />
-            <InfoCard onShow={onShow} onExchange={onExchange} />
-          </Container> */}
           <Container>
             <CategorySpan>Cotações</CategorySpan>
           </Container>

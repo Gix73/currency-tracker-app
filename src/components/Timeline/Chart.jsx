@@ -9,9 +9,8 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { candleData } from "@constants/exchangeValues";
 import { parseData } from "@utils/DataParser";
-import { labels, options, options_2 } from "@constants/chartData";
+import { options, options_2 } from "@constants/chartData";
 import { PropTypes } from "prop-types";
 
 ChartJS.register(
@@ -22,8 +21,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-export const [data, tradeData] = parseData(candleData, labels);
 
 const CandleStickChart = ({ candleData }) => {
   const labels = useMemo(() => Object.keys(candleData), [candleData]);

@@ -108,11 +108,6 @@ export const LowSpan = styled.div`
   }
 `;
 
-// export const HugeLogo = styled.div`
-//   background-image: url("${logo}");
-//   width: 299.43px;
-//   height: 312.74px;
-// `;
 export const HugeLogo = styled.img`
   background: transparent;
   background-repeat: no-repeat;

@@ -23,7 +23,7 @@ const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
       <CardImg src={urlImg} alt="currency_logo" />
       <InfoContainer>
         <InfoSpan>{name}</InfoSpan>
-        <CostSpan>
+        <CostSpan data-testid={`cardRes-${firstVal}`}>
           {"$ "}
           {data ? convert() : ""}
         </CostSpan>
