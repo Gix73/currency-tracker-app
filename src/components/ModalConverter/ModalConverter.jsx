@@ -25,10 +25,19 @@ const ModalConverter = ({
   const [amount, setAmount] = useState(1);
   const [to, setTo] = useState("usd");
 
-  function convert() {
-    return (
-      "" + ((1 / data[exchangeData.from]) * (1 * data[to]) * amount).toFixed(9)
-    );
+  const convert = () =>
+    "" + ((1 / data[exchangeData.from]) * (1 * data[to]) * amount).toFixed(9);
+
+  function handlePropagation(e) {
+    e.stopPropagation();
+  }
+
+  function handleAmount(e) {
+    setAmount(e.target.value);
+  }
+
+  function handleConvertTo(e) {
+    setTo(e.target.value);
   }
 
   return (
@@ -38,19 +47,13 @@ const ModalConverter = ({
       }}
       show={show}
     >
-      <ModalContainer id="modal-container" onClick={(e) => e.stopPropagation()}>
+      <ModalContainer id="modal-container" onClick={handlePropagation}>
         <CloseBtn onClick={closeHandler} />
         <TitleSpan>Converter</TitleSpan>
         <ExchangeWrapper>
           <InpWrapper>
             <InpSpan>Amount</InpSpan>
-            <AmountInput
-              type="text"
-              value={amount}
-              onChange={(e) => {
-                setAmount(e.target.value);
-              }}
-            />
+            <AmountInput type="text" value={amount} onChange={handleAmount} />
           </InpWrapper>
           <InpWrapper>
             <InpSpan>From</InpSpan>
@@ -58,7 +61,7 @@ const ModalConverter = ({
           </InpWrapper>
           <InpWrapper>
             <InpSpan>To</InpSpan>
-            <StyledSelect value={to} onChange={(e) => setTo(e.target.value)}>
+            <StyledSelect value={to} onChange={handleConvertTo}>
               {chooseList.map((e) => {
                 return (
                   <StyledOption key={e} value={e}>

@@ -8,18 +8,15 @@ import {
 import { PropTypes } from "prop-types";
 
 const InfoCard = ({ firstVal, name, urlImg, data, onShow, onExchange }) => {
-  function convert() {
-    return (1 / data[firstVal]).toFixed(6);
+  const convert = () => (1 / data[firstVal]).toFixed(6);
+
+  function handleClick() {
+    onShow(true);
+    onExchange(firstVal, "usd");
   }
 
   return (
-    <InfoCardWrapper
-      id={`card-${firstVal}`}
-      onClick={() => {
-        onShow(true);
-        onExchange(firstVal, "usd");
-      }}
-    >
+    <InfoCardWrapper id={`card-${firstVal}`} onClick={handleClick}>
       <CardImg src={urlImg} alt="currency_logo" />
       <InfoContainer>
         <InfoSpan>{name}</InfoSpan>

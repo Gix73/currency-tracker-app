@@ -4,11 +4,17 @@ import Header from "@components/Header/Header";
 import { AppWrapper, Container } from "./styled";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import ModalConverter from "@components/Modal/ModalConverter";
+import ModalConverter from "@components/ModalConverter/ModalConverter";
 import { exchangeValues } from "@constants/exchangeValues";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@constants/themeData";
 import Loading from "@components/Loading/Loading";
+import {
+  BANKCARD_PATH,
+  CONTACTS_PATH,
+  HOME_PATH,
+  TIMELINE_PATH,
+} from "./constants/pathRoutes";
 
 const HomePage = lazy(() => import("@pages/HomePage/HomePage"));
 const TimelinePage = lazy(() => import("@pages/TimelinePage/TimelinePage"));
@@ -67,7 +73,7 @@ const App = () => {
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route
-                path="/"
+                path={HOME_PATH}
                 element={
                   <HomePage
                     data={currencyData}
@@ -78,7 +84,7 @@ const App = () => {
                 }
               />
               <Route
-                path="/timeline"
+                path={TIMELINE_PATH}
                 element={
                   <TimelinePage
                     candleData={candleData}
@@ -89,10 +95,10 @@ const App = () => {
                 }
               />
               <Route
-                path="/bankcard"
+                path={BANKCARD_PATH}
                 element={<BankCardPage exchangeValues={exchangeValues} />}
               />
-              <Route path="/contacts" element={<ContactsPage />} />
+              <Route path={CONTACTS_PATH} element={<ContactsPage />} />
             </Routes>
           </Suspense>
           <Footer />

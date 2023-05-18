@@ -1,8 +1,14 @@
 import { memo } from "react";
-import ToggleButton from "../ToggleButton/ToggleButton.jsx";
+import ToggleButton from "@components/ui/ToggleButton/ToggleButton.jsx";
 import { Logo, NavContainer, NavWrapper, StyledLink } from "./styled";
 import { PropTypes } from "prop-types";
 import logo from "@assets/miniLogo.svg";
+import {
+  BANKCARD_PATH,
+  CONTACTS_PATH,
+  HOME_PATH,
+  TIMELINE_PATH,
+} from "../../../constants/pathRoutes.js";
 
 const Nav = ({ toggleTheme }) => {
   return (
@@ -10,16 +16,16 @@ const Nav = ({ toggleTheme }) => {
       <Logo src={logo} alt="logo" />
       <NavContainer>
         <div>
-          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to={HOME_PATH}>Home</StyledLink>
         </div>
         <div>
-          <StyledLink to="/timeline">Timeline</StyledLink>
+          <StyledLink to={TIMELINE_PATH}>Timeline</StyledLink>
         </div>
         <div>
-          <StyledLink to="/bankcard">Bank card</StyledLink>
+          <StyledLink to={BANKCARD_PATH}>Bank card</StyledLink>
         </div>
         <div>
-          <StyledLink to="/contacts">Contato</StyledLink>
+          <StyledLink to={CONTACTS_PATH}>Contato</StyledLink>
         </div>
       </NavContainer>
       <ToggleButton toggleTheme={toggleTheme} />

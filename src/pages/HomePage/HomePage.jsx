@@ -7,29 +7,29 @@ import {
   HomeWrapper,
   Wrapper,
 } from "./styled";
-import InfoCard from "@components/Home/InfoCard/InfoCard";
+import InfoCard from "@components/InfoCard/InfoCard";
 
 const HomePage = ({ data, onShow, onExchange, exchangeValues }) => {
-  function createItems() {
-    return Object.keys(exchangeValues).reduce(
-      (comp, e) => [
-        ...comp,
-        <InfoCard
-          key={e}
-          firstVal={e.toLowerCase()}
-          name={exchangeValues[e].name}
-          sign={exchangeValues[e].sign}
-          urlImg={exchangeValues[e].img}
-          data={data.usd}
-          onShow={onShow}
-          onExchange={onExchange}
-        />,
-      ],
-      []
-    );
-  }
-
-  const currencyCards = useMemo(() => createItems(), [data]);
+  const currencyCards = useMemo(
+    () =>
+      Object.keys(exchangeValues).reduce(
+        (comp, e) => [
+          ...comp,
+          <InfoCard
+            key={e}
+            firstVal={e.toLowerCase()}
+            name={exchangeValues[e].name}
+            sign={exchangeValues[e].sign}
+            urlImg={exchangeValues[e].img}
+            data={data.usd}
+            onShow={onShow}
+            onExchange={onExchange}
+          />,
+        ],
+        []
+      ),
+    [data]
+  );
 
   return (
     <HomePageWrapper>

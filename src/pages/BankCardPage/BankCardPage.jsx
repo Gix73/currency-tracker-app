@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { memo, useMemo, useRef, useState } from "react";
 import {
   Img,
   Input,
@@ -10,7 +10,7 @@ import {
   SearchWrapper,
   StyledSpan,
 } from "./styled";
-import MapGL from "@components/BankCard/Map";
+import MapGL from "@components/MapGL/MapGL";
 import { banks } from "@constants/banksCoord";
 import search_icon from "@assets/search.svg";
 import { PropTypes } from "prop-types";
@@ -27,9 +27,9 @@ const BankCardPage = ({ exchangeValues }) => {
 
   function createFilterData(e) {
     const searchData = e.target.value;
-    const filteredCurrencies = currencies.filter((e) => {
-      return e.toLowerCase().includes(searchData.toLowerCase());
-    });
+    const filteredCurrencies = currencies.filter((e) =>
+      e.toLowerCase().includes(searchData.toLowerCase())
+    );
 
     if (searchData) {
       setFilterData(filteredCurrencies);
@@ -49,13 +49,12 @@ const BankCardPage = ({ exchangeValues }) => {
   }
 
   function getBanks() {
-    let markers = [];
-    for (let i = 0; i < banks.length; i++) {
-      if (banks[i].currencies.includes(inpRef.current.value.toLowerCase())) {
-        markers.push([banks[i].longitude, banks[i].latitude]);
+    return banks.reduce((markers, e) => {
+      if (e.currencies.includes(inpRef.current.value.toLowerCase())) {
+        return [...markers, [e.longitude, e.latitude]];
       }
-    }
-    return markers;
+      return [...markers];
+    }, []);
   }
 
   return (
@@ -90,4 +89,4 @@ BankCardPage.propTypes = {
   exchangeValues: PropTypes.object,
 };
 
-export default BankCardPage;
+export default memo(BankCardPage);

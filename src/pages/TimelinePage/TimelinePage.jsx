@@ -1,4 +1,4 @@
-import CandleStickChart from "@components/Timeline/Chart";
+import CandleStickChart from "@components/CandleStickChart/CandleStickChart";
 import { PropTypes } from "prop-types";
 import {
   ChartContainer,
@@ -18,13 +18,14 @@ const TimelinePage = ({
   chartCurrency,
   exchangeValues,
 }) => {
+  function handleCurrencyChange(e) {
+    onCurrencyChange(e.target.value);
+  }
+
   return (
     <TimelineWrapper>
       <SelectWrapper>
-        <ValueSelector
-          value={chartCurrency}
-          onChange={(e) => onCurrencyChange(e.target.value)}
-        >
+        <ValueSelector value={chartCurrency} onChange={handleCurrencyChange}>
           <Option value={"BTC"}>Bitcoin</Option>
           <Option value={"ETH"}>Ethereum</Option>
         </ValueSelector>
